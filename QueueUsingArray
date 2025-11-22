@@ -1,47 +1,34 @@
-#include <stdio.h>
-#define MAX 5
-
+#include<stdio.h>
+#define MAX 10
 int queue[MAX];
-int front = -1, rear = -1;
-
-void enqueue(int value) {
-    if (rear == MAX - 1) {
-        printf("Queue Overflow\n");
-        return;
+int front =-1;rear=-1;
+void enqueue(int value)
+{
+    if (rear==MAX-1)
+    {
+        printf("The Queue is Overflow");
     }
-    if (front == -1) front = 0;
-    rear++;
-    queue[rear] = value;
-    printf("Inserted %d\n", value);
+    else
+    {
+        rear++;
+        front=0;
+        queue[rear]=value;
+        printf("The %d is added into the Queue",value);
+    }
 }
-
-void dequeue() {
-    if (front == -1 || front > rear) {
-        printf("Queue Underflow\n");
-        return;
+void dequeue()
+{
+    if(front==-1||front>rear)
+    {
+    printf("Queue is Underflow");
     }
-    printf("Deleted %d\n", queue[front]);
-    front++;
+    else
+    {
+        printf("%d is Deleted from the queue",queue[front]);
+        front++;
+    }
 }
-
-void display() {
-    if (front == -1 || front > rear) {
-        printf("Queue is empty\n");
-        return;
-    }
-    printf("Queue elements: ");
-    for (int i = front; i <= rear; i++) {
-        printf("%d ", queue[i]);
-    }
-    printf("\n");
-}
-
-int main() {
-    enqueue(10);
-    enqueue(20);
-    enqueue(30);
-    display();
-    dequeue();
-    display();
-    return 0;
+void display()
+{
+    if("")
 }
